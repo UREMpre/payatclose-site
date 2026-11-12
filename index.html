@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pay at close · 615 Media</title>
+<meta name="description" content="Book your shoot, take a one-minute approval, and pay nothing until your listing closes. Offered through Titus, our pay-at-close partner.">
+<link rel="canonical" href="https://payatclose.615.media/">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="615 Media">
+<meta property="og:title" content="Pay at close · 615 Media">
+<meta property="og:description" content="Put the media on the listing, not on your card. Book your shoot and pay nothing until your listing closes.">
+<meta property="og:url" content="https://payatclose.615.media/">
+<meta property="og:image" content="https://payatclose.615.media/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --ink:#f5f5f7;
+  --mute:rgba(245,245,247,.68);
+  --dim:rgba(245,245,247,.56);
+  --line:rgba(255,255,255,.12);
+  --glass:rgba(255,255,255,.06);
+  --g:#00fe00; --b:#0099fd; --teal:#00d1b2;
+  --g-ink:#7dff7d; --b-ink:#7cc6ff; --t-ink:#6fe9d6;
+  --on-grad:#031018;
+  --gut:clamp(20px,5vw,44px);
+  --r:22px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;background:#000;scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.5;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+b,strong{font-weight:600}
+.vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+:focus-visible{outline:2px solid var(--b-ink);outline-offset:3px;border-radius:6px}
+
+/* ground: the two glows of the printed sheet, fixed behind the page */
+.ground{position:fixed;inset:0;z-index:-1;pointer-events:none;background:
+  radial-gradient(max(560px,62vw) max(380px,42vw) at 92% -8%,rgba(0,153,253,.24),transparent 70%),
+  radial-gradient(max(460px,52vw) max(340px,38vw) at -8% 10%,rgba(0,254,0,.14),transparent 70%),
+  #000}
+.hair{height:3px;background:linear-gradient(90deg,var(--g),var(--teal),var(--b))}
+
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+
+/* header */
+.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 16px;padding:clamp(18px,3.2vw,30px) 0 0}
+.top a.home{display:inline-flex;border-radius:8px}
+.top img{width:auto;height:clamp(24px,3.2vw,30px)}
+.tag{display:inline-block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;
+  padding:.62em 1.05em;border-radius:99px;white-space:nowrap;line-height:1.2}
+.tag.now{background:rgba(0,153,253,.18);color:var(--b-ink)}
+.tag.soon{background:rgba(0,254,0,.13);color:var(--g-ink)}
+
+/* hero */
+.hero{padding:clamp(36px,7vw,84px) 0 clamp(26px,4.4vw,48px)}
+.eyebrow{margin:0;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);font-weight:600}
+h1{margin:14px 0 0;font-size:clamp(2.3rem,6.6vw,4.4rem);font-weight:700;letter-spacing:-.045em;line-height:1.02;
+  max-width:16ch;text-wrap:balance}
+.lead{margin:clamp(14px,2vw,22px) 0 0;font-size:clamp(1.02rem,1.55vw,1.22rem);line-height:1.5;color:var(--mute);
+  max-width:54ch;letter-spacing:-.01em}
+.lead b{color:var(--ink)}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:clamp(22px,3vw,32px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:50px;padding:0 1.5em;border-radius:99px;
+  font:inherit;font-size:1rem;font-weight:650;letter-spacing:-.01em;text-decoration:none;white-space:nowrap;
+  transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease,border-color .18s ease}
+.btn svg{width:1.05em;height:1.05em;flex:none}
+.btn.pri{background:linear-gradient(120deg,var(--g),var(--teal) 48%,var(--b));color:var(--on-grad);
+  box-shadow:0 10px 34px -12px rgba(0,209,178,.75),inset 0 1px 0 rgba(255,255,255,.4)}
+.btn.sec{background:var(--glass);border:1px solid var(--line);color:var(--ink);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+@media (hover:hover){
+  .btn.pri:hover{transform:translateY(-1px);box-shadow:0 14px 40px -12px rgba(0,209,178,.95),inset 0 1px 0 rgba(255,255,255,.4)}
+  .btn.sec:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2)}
+}
+.btn:active{transform:translateY(0) scale(.985)}
+.quiet{margin:16px 0 0;font-size:.92rem;color:var(--mute)}
+.quiet a{color:var(--ink);text-decoration:none;font-weight:600;border-bottom:1px solid rgba(255,255,255,.28);padding-bottom:1px}
+@media (hover:hover){.quiet a:hover{border-bottom-color:var(--ink)}}
+
+/* cards */
+.card{background:var(--glass);border:1px solid var(--line);border-radius:var(--r);
+  padding:clamp(18px,2.4vw,26px);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+.stack{display:grid;gap:clamp(12px,1.6vw,16px)}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,16px)}
+.stat .big{font-size:clamp(2rem,4.4vw,2.9rem);font-weight:700;letter-spacing:-.045em;line-height:1;color:var(--g-ink)}
+.stat .big.b{color:var(--b-ink)} .stat .big.t{color:var(--t-ink)}
+.stat p{margin:10px 0 0;font-size:.95rem;line-height:1.42;color:var(--mute)}
+.stat p b{color:var(--ink)}
+
+.cols{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:clamp(12px,1.6vw,16px);align-items:stretch}
+.cols>.card{display:flex;flex-direction:column}
+h2.label{margin:0;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);font-weight:700;line-height:1.3}
+ol.steps{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:14px;counter-reset:s}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:30px minmax(0,1fr);gap:13px;align-items:start;
+  font-size:.98rem;line-height:1.45;color:var(--mute)}
+ol.steps li::before{content:counter(s);width:30px;height:30px;border-radius:50%;
+  background:linear-gradient(135deg,var(--g),var(--b));color:var(--on-grad);font-weight:800;font-size:.86rem;
+  display:flex;align-items:center;justify-content:center;margin-top:1px}
+ol.steps li b{color:var(--ink)}
+ol.steps a,.contact a,.fine a{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.28);padding-bottom:1px;white-space:nowrap}
+@media (hover:hover){ol.steps a:hover,.contact a:hover{border-bottom-color:var(--ink)}}
+.contact{margin:auto 0 0;padding-top:16px;border-top:1px solid var(--line);font-size:.98rem;color:var(--mute);line-height:1.45}
+ol.steps{margin-bottom:18px}
+
+table{width:100%;border-collapse:collapse;margin-top:14px;font-size:1rem}
+th{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-weight:700;text-align:left;
+  padding:0 0 9px;border-bottom:1px solid var(--line)}
+th.r,td.r{text-align:right}
+td{padding:11px 0;border-bottom:1px solid rgba(255,255,255,.07);color:var(--ink);font-variant-numeric:tabular-nums}
+tbody tr:last-child td{border-bottom:0}
+td .fee{font-weight:700;color:var(--g-ink)}
+td small{font-weight:500;font-size:.8rem;color:var(--mute);letter-spacing:0}
+td .no{color:var(--mute);font-weight:600}
+.fine{margin:12px 0 0;font-size:.86rem;line-height:1.5;color:var(--mute)}
+.fine b{color:var(--ink)}
+
+.band{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(14px,2vw,20px);align-items:center;
+  border-color:rgba(0,254,0,.28);background:linear-gradient(90deg,rgba(0,254,0,.08),rgba(0,153,253,.08))}
+.band .ck{width:58px;height:58px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.05);
+  display:flex;align-items:center;justify-content:center}
+.band .ck i{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--g),var(--b));display:block;position:relative}
+.band .ck i::after{content:"";position:absolute;left:10px;top:4px;width:7px;height:13px;border:solid var(--on-grad);border-width:0 3px 3px 0;transform:rotate(45deg)}
+.band h2{margin:0;font-size:clamp(1.15rem,2.1vw,1.42rem);font-weight:700;letter-spacing:-.03em;line-height:1.2;
+  display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+.band p{margin:8px 0 0;font-size:.98rem;line-height:1.45;color:var(--mute);max-width:70ch}
+.band p b{color:var(--ink)}
+
+h2.label.know-h{margin:clamp(26px,3.6vw,40px) 0 0}
+.know{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.6vw,16px);margin-top:14px}
+.know .card{padding:clamp(16px,2vw,20px)}
+.know h3{margin:0;font-size:1rem;font-weight:700;letter-spacing:-.015em;line-height:1.28}
+.know p{margin:8px 0 0;font-size:.92rem;line-height:1.45;color:var(--mute)}
+
+/* footer */
+footer{margin-top:clamp(34px,5.4vw,64px);padding:clamp(22px,3vw,30px) 0 clamp(26px,3.6vw,40px);border-top:1px solid var(--line)}
+.foot{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px 32px;align-items:end}
+.legal{margin:0;font-size:.78rem;line-height:1.55;color:var(--dim);max-width:68ch}
+.site{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--mute);white-space:nowrap;text-align:right;line-height:2}
+.site a{text-decoration:none}
+@media (hover:hover){.site a:hover{color:var(--ink)}}
+
+/* phone: one action bar that follows the thumb once the hero buttons leave the screen */
+.dock{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:10;display:none;gap:8px;padding:7px;
+  border-radius:99px;background:rgba(24,24,27,.72);border:1px solid var(--line);
+  -webkit-backdrop-filter:blur(22px) saturate(1.7);backdrop-filter:blur(22px) saturate(1.7);
+  box-shadow:0 18px 44px -14px rgba(0,0,0,.9);
+  opacity:0;transform:translateY(18px);pointer-events:none;transition:opacity .26s ease,transform .26s cubic-bezier(.2,.8,.2,1)}
+.dock.on{opacity:1;transform:none;pointer-events:auto}
+.dock .btn{flex:1;min-height:46px;padding:0 1em;font-size:.97rem}
+.dock .btn.sec{flex:0 0 auto;padding:0 1.35em}
+
+@media (max-width:980px){.know{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:860px){.cols{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:700px){
+  .stats{grid-template-columns:minmax(0,1fr)}
+  .stat{display:grid;grid-template-columns:7.4rem minmax(0,1fr);gap:14px;align-items:center}
+  .stat .big{font-size:1.85rem}
+  .stat p{margin:0}
+  .actions .btn{flex:1 1 100%}
+  .foot{grid-template-columns:minmax(0,1fr)}
+  .site{text-align:left}
+  .dock{display:flex}
+  body{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+}
+@media (max-width:560px){
+  .know{grid-template-columns:minmax(0,1fr)}
+  .band{grid-template-columns:minmax(0,1fr)}
+  .band .ck{width:50px;height:50px;border-radius:14px}
+  .top .tag{font-size:9px;letter-spacing:.11em}
+}
+
+/* one entrance, then stillness */
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.rise{animation:rise .7s cubic-bezier(.2,.8,.2,1) both}
+.d1{animation-delay:.05s}.d2{animation-delay:.12s}.d3{animation-delay:.19s}.d4{animation-delay:.26s}.d5{animation-delay:.34s}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rise{animation:none}
+  .btn,.dock{transition:none}
+}
+</style>
+</head>
+<body>
+<div class="ground" aria-hidden="true"></div>
+<div class="hair" aria-hidden="true"></div>
+
+<div class="wrap">
+  <header class="top">
+    <a class="home" href="https://615.media/" aria-label="615 Media home"><img src="brand.png" width="900" height="173" alt="615 Media"></a>
+    <span class="tag now">Available now · by request</span>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="h">
+      <p class="eyebrow rise">Pay at close · with Titus</p>
+      <h1 id="h" class="rise d1">Put the media on the listing, not on your card.</h1>
+      <p class="lead rise d2">Book your shoot, take a one-minute approval, and pay <b>nothing until your listing closes</b>. Titus, our pay-at-close partner, settles your 615 Media invoice from the closing proceeds.</p>
+      <div class="actions rise d3" id="actions">
+        <a class="btn pri" href="sms:+16152000848">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.3 8.7 8.7 0 0 1-3.9-.9L3 20.5l1.7-4.9A8.2 8.2 0 0 1 4 11.5 8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5Z"/></svg>
+          Text 615-200-0848</a>
+        <a class="btn sec" href="tel:+16152000848">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16.4v2.9a2 2 0 0 1-2.2 2 19.4 19.4 0 0 1-8.5-3 19.1 19.1 0 0 1-5.9-5.9 19.4 19.4 0 0 1-3-8.5A2 2 0 0 1 3.4 1.7h2.9a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L7.3 9.5a15.6 15.6 0 0 0 5.9 5.9l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+          Call</a>
+      </div>
+      <p class="quiet rise d4">Or reply to your booking confirmation. <a href="615-Pay-at-Close.pdf">Download the one-page PDF</a></p>
+    </section>
+
+    <div class="stack">
+      <section class="stats rise d5" aria-label="At a glance">
+        <div class="card stat"><div class="big">$0</div><p><b>due today.</b> The balance settles at closing, or at six months, whichever comes first.</p></div>
+        <div class="card stat"><div class="big b">~60 sec</div><p><b>to get approved</b>, online. Titus approves over 92% of applications instantly.</p></div>
+        <div class="card stat"><div class="big t">0–8%</div><p><b>flat fee</b>, set by your credit score. Not interest, no monthly payments.</p></div>
+      </section>
+
+      <div class="cols">
+        <section class="card" aria-labelledby="how">
+          <h2 class="label" id="how">How to add it today</h2>
+          <ol class="steps">
+            <li><span><b>Book your shoot as usual.</b> Any package or mix of services, $300 and up. <a href="https://properties.615.media/order">Book online</a></span></li>
+            <li><span><b>Ask for pay at close.</b> Reply to your booking confirmation, or call or text the office.</span></li>
+            <li><span><b>Approve with Titus.</b> We send your link; Titus verifies you and the listing in about a minute.</span></li>
+            <li><span><b>Done.</b> Your shoot is confirmed, media delivers as normal, and nothing is due until closing.</span></li>
+          </ol>
+          <p class="contact">Call or text <a href="tel:+16152000848">615-200-0848</a> or reply to your confirmation email, and we’ll add it to your order.</p>
+        </section>
+
+        <section class="card" aria-labelledby="rate">
+          <h2 class="label" id="rate">Your rate</h2>
+          <table>
+            <caption class="vh">Flat fee by credit score</caption>
+            <thead><tr><th scope="col">Credit score</th><th scope="col" class="r">Flat fee</th></tr></thead>
+            <tbody>
+              <tr><td>800–850</td><td class="r"><span class="fee">0%</span></td></tr>
+              <tr><td>740–799</td><td class="r"><span class="fee">4%</span></td></tr>
+              <tr><td>670–739</td><td class="r"><span class="fee">6.5%</span></td></tr>
+              <tr><td>640–669</td><td class="r"><span class="fee">8%</span> <small>· 5.5% in Tennessee</small></td></tr>
+              <tr><td>Below 640</td><td class="r"><span class="no">Not eligible</span></td></tr>
+            </tbody>
+          </table>
+          <p class="fine">One flat fee on your order total, added to the balance you settle at closing. <b>Example:</b> a $1,000 order at 4% settles at $1,040. Agent rates for Tennessee and Texas; Titus shows your exact rate before you accept. Not eligible? You simply pay at delivery as usual.</p>
+        </section>
+      </div>
+
+      <section class="card band" aria-labelledby="soon">
+        <div class="ck" aria-hidden="true"><i></i></div>
+        <div>
+          <h2 id="soon">Coming soon: pay at close right in the order form <span class="tag soon">In progress</span></h2>
+          <p>Soon you’ll pick <b>Pay at close</b> at checkout and get your approval link the moment you book. Until then, just ask and we’ll add it to any qualifying order.</p>
+        </div>
+      </section>
+    </div>
+
+    <section aria-labelledby="know">
+      <h2 class="label know-h" id="know">Good to know</h2>
+      <div class="know">
+        <div class="card"><h3>Not approved?</h3><p>No problem. You pay at delivery as usual, and nothing changes with your shoot.</p></div>
+        <div class="card"><h3>Home hasn’t sold in six months?</h3><p>Titus offers flexible repayment plans, not an automatic charge.</p></div>
+        <div class="card"><h3>What does Titus check?</h3><p>Your identity and the listing. Approval takes about a minute and is decided by Titus.</p></div>
+        <div class="card"><h3>Which orders qualify?</h3><p>Orders of $300 or more: photos, video, drone, floor plans, 3D, any mix.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot">
+      <p class="legal">Pay at close is offered through Titus Lending, LLC and is subject to credit approval. Fee tiers from Titus’s client rate sheet (September 2026); your exact rate appears in the Titus agreement before you accept. 615 Media is paid by Titus when you book.</p>
+      <div class="site"><a href="https://615.media/">615 Media</a> · <a href="tel:+16152000848">615-200-0848</a><br><a href="615-Pay-at-Close.pdf">Download the PDF</a></div>
+    </div>
+  </footer>
+</div>
+
+<nav class="dock" id="dock" aria-label="Contact 615 Media">
+  <a class="btn pri" href="sms:+16152000848">Text us to add it</a>
+  <a class="btn sec" href="tel:+16152000848">Call</a>
+</nav>
+
+<script>
+(function () {
+  var dock = document.getElementById('dock'), actions = document.getElementById('actions');
+  if (!dock || !actions || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function (entries) {
+    var e = entries[0];
+    // show the bar only after the hero buttons have scrolled away above the screen
+    dock.classList.toggle('on', !e.isIntersecting && e.boundingClientRect.top < 0);
+  }, { threshold: 0 }).observe(actions);
+})();
+</script>
+</body>
+</html>
